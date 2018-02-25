@@ -98,6 +98,20 @@ Not Leap year              | - | Y | - | Y | Y | Y | Y | - |
 - Exercise 1:
 Make a state diagram that depicts the state of MyArrayListWithBugs.java and shows the events that cause a change from one state to another. (Black dot indicates start state)
 ![Alt text](Screenshot_1.png?raw=true "State Diagram")
+Action | State | Next state
+---------------------:| ----------- | --------------
+MyArrayListWithBugs() | S1 | S2
+Add(Object o) | S2 | S2
+Size() | S2 | S2
+Succesfully get(int Index) | S2 | S2
+OutOfBounds get(int index) | S2 | S3
+Succesfully add(int index, object e) | S2 | S2
+OutOfBounds add(int index, object e) | S2 | S3
+Succesfully remove(int index) | S2 | S2
+OutOfBounds remove(int index) | S2 | S3
+
+
+S1 = Startstate, S2 = Working, idle, ready state. S3 = Error, exception chrashed state.
 ----------------------
 - Exercise 2:
 Derive test cases from the state diagram
