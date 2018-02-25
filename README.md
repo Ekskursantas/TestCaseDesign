@@ -164,9 +164,11 @@ Also, after removing the value at index. The values will be move to thre left by
 ----------------------
 - Exercise 5: Consider whether a state table is more useful design technique. Comment on that.
 
+From my point of view State table is very nice to know the "sequence" in a sort. Knowing ahead of time what might then following state be allows us to prepare for debugging it and finding out the issue ahead of time. So, knowing how the code should behave let us figure out quickly the faults of the code.
 
 ----------------------
 - Exercise 6: Make a conclusion where you specify the level of test coverage and argue for your chosen level:
+
 
 
 ----------------------
