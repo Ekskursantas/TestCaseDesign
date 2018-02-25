@@ -111,7 +111,7 @@ get(int Index) | Waiting State | Working State
 get(int index) | Waiting State | Error State
 Size() | Waiting State | Working State
 
-- State 1 -> State 2 -> State 3 -> State 4
+#### State 1 -> State 2 -> State 3 -> State 4
 - State 1 = Starting State
 - State 2 = Waiting State
 - State 3 = Working State
