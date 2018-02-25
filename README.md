@@ -97,7 +97,8 @@ Not Leap year              | - | Y | - | Y | Y | Y | Y | - |
 ### State Transition
 - Exercise 1:
 Make a state diagram that depicts the state of MyArrayListWithBugs.java and shows the events that cause a change from one state to another. (Black dot indicates start state)
-![Alt text](Screenshot_1.png?raw=true "State Transition Diagram")
+![Alt text](Screenshot_1.png?raw=true "State Diagram")
+----------------------
 - Exercise 2:
 Derive test cases from the state diagram
 
@@ -116,6 +117,33 @@ TC# | Testcase
 ------------------------------------------
 - Exercise 3:
 Implemented Automated Unit Test With JUnit5 "Testing.java"
+----------------------
 - Exercise 4:
 Detect, locate (and document) and fix as many errors as possible in the class.
+![Alt text](Screenshot_2.png?raw=true "TestCases")
 
+Looking at this picture we can see several issues with the implementation before hand. 
+```java
+if (index <= 0 || nextFree < index)
+```
+Because of this if statement we are unable to get the object in the index possition of 0. To fix this issue we have to remove the "=" from the first statement and add the "=" to the second statement because if there were no added object we would like to throw this exception because the nextFree = 0;
+
+```java
+for(int i = nextFree-1; i > index; i--)
+```
+Because of this i value we exclude the last element in the array and do not add it with the new indext. To fix it we have to remove the "-1". Also, the function is missing "nextFree++". Meaning even though we added a new value to the end of the list the "nextFree" index is still not updated.
+
+What else caught my mind is that, even though we are aloved to add the object with a specific index. We have to make sure that the index is within the range of nextFree. Which in a sense ruins the whole point of the insertion. I would be better to make it that we create bigger arrays when the index is bigger than the size of the array and we create the new array with the length of the index.
+
+Also, after removing the value at index. The values will be move to thre left by one and doing so the last and the next last values will be duplicates because we do not remove the last value, we only overwrite it next time we add a new value with that index.
+
+
+----------------------
+- Exercise 5: Consider whether a state table is more useful design technique. Comment on that.
+
+
+----------------------
+- Exercise 6: Make a conclusion where you specify the level of test coverage and argue for your chosen level:
+
+
+----------------------
