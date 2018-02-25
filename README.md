@@ -1,4 +1,4 @@
-# Test excercise 3 
+# Documentation on the Test Exercise 3
 
 ### Equivalence classes
 
