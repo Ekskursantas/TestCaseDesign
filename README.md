@@ -98,17 +98,26 @@ Not Leap year              | - | Y | - | Y | Y | Y | Y | - |
 - Exercise 1:
 Make a state diagram that depicts the state of MyArrayListWithBugs.java and shows the events that cause a change from one state to another. (Black dot indicates start state)
 ![Alt text](Screenshot_1.png?raw=true "State Diagram")
+
 Action | State | Next state
 ---------------------:| ----------- | --------------
-MyArrayListWithBugs() | S1 | S2
-Add(Object o) | S2 | S2
-Size() | S2 | S2
-Succesfully get(int Index) | S2 | S2
-OutOfBounds get(int index) | S2 | S3
-Succesfully add(int index, object e) | S2 | S2
-OutOfBounds add(int index, object e) | S2 | S3
-Succesfully remove(int index) | S2 | S2
-OutOfBounds remove(int index) | S2 | S3
+MyArrayListWithBugs() | Starting State | Waiting State
+Add(Object o) | Waiting State | Working State
+add(int index, object e) | Waiting State | Working State
+add(int index, object e) | Waiting State | Error State
+remove(int index) | Waiting State | Working State
+remove(int index) | Waiting State | Error State
+get(int Index) | Waiting State | Working State
+get(int index) | Waiting State | Error State
+Size() | Waiting State | Working State
+
+- State 1 -> State 2 -> State 3 -> State 4
+- State 1 = Starting State
+- State 2 = Waiting State
+- State 3 = Working State
+- State 4 = Error State
+
+
 
 
 S1 = Startstate, S2 = Working, idle, ready state. S3 = Error, exception chrashed state.
